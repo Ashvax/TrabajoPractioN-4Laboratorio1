@@ -36,9 +36,9 @@ public class Convertidor extends javax.swing.JFrame {
         });
 
         JLConvertidor.setBackground(new java.awt.Color(0, 255, 102));
-        JLConvertidor.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        JLConvertidor.setFont(new java.awt.Font("Courier New", 1, 16)); // NOI18N
         JLConvertidor.setForeground(new java.awt.Color(255, 51, 51));
-        JLConvertidor.setText("Convertidor");
+        JLConvertidor.setText("Convertidor De Temperatura");
 
         JLGrados.setBackground(new java.awt.Color(255, 255, 255));
         JLGrados.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
@@ -54,22 +54,22 @@ public class Convertidor extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(137, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(JLConvertidor)
-                        .addGap(175, 175, 175))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(JBConvertir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(JLResultado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(158, 158, 158))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addComponent(JLGrados)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(JTF1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(JBConvertir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(JLResultado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(158, 158, 158))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(100, Short.MAX_VALUE)
+                        .addComponent(JLConvertidor))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addComponent(JLGrados)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(JTF1)))
                 .addGap(62, 62, 62))
         );
         layout.setVerticalGroup(
@@ -77,7 +77,7 @@ public class Convertidor extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(JLConvertidor)
-                .addGap(12, 12, 12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JLGrados, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JTF1))
@@ -98,7 +98,9 @@ public class Convertidor extends javax.swing.JFrame {
         JLResultado.setText("Resultado: " + String.format("%.2f", fahrenheit) + "°F");
     } catch (NumberFormatException e) {
         JOptionPane.showMessageDialog(this, "Ingrese un valor válido en grados Fahrenheit.", "Error", JOptionPane.ERROR_MESSAGE);
-    }                                           
+    }     
+        JTF1.setText("");
+       
     }//GEN-LAST:event_JBConvertirActionPerformed
 
     public static void main(String args[]) {
